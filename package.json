@@ -11,10 +11,14 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "b": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "clean": "rm -f -r dist",
+    "build-dev": "webpack -d",
+    "build-prod": "webpack -p",
+    "lint": "eslint './src/**/*.jsx'",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier --write '**/*.{js,jsx,json}'",
+    "start": "webpack-dev-server --open --hot -d",
+    "analyze": "webpack -p --env.analyze"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +34,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "_eslint": "comment text goes here...",
+    "eslint": "^7.5.0",
+    "_comment": "comment text goes here..."
   }
 }
